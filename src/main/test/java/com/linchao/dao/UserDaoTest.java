@@ -24,5 +24,6 @@ public class UserDaoTest extends AbstractJUnit4SpringContextTests {
     @Test
     public void get(){
         userDao.get();
+        System.out.println();
     }
 }
