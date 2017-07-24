@@ -14,10 +14,10 @@ import javax.annotation.Resource;
 @Service("userServiceImp")
 public class UserServiceImp {
 
-    @Resource
+    @Autowired
     UserDao userDao;
 
     public void get(){
-        System.out.println(userDao.queryById(1).getUserName());
+        System.out.println(userDao.selectByPrimaryKey(101).getUserName());
     }
 }
