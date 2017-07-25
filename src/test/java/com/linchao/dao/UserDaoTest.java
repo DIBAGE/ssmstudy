@@ -13,7 +13,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
  * @description :
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration({ "classpath:spring-mybatis.xml"})
+@ContextConfiguration({"classpath:spring-mybatis.xml"})
 public class UserDaoTest {
     @Autowired
     UserServiceImp userServiceImp;
