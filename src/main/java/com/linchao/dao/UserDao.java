@@ -8,7 +8,10 @@
 package com.linchao.dao;
 
 import com.linchao.po.UserPO;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 @Repository
 public interface UserDao {
@@ -23,4 +26,6 @@ public interface UserDao {
     int updateByPrimaryKeySelective(UserPO record);
 
     int updateByPrimaryKey(UserPO record);
+
+    List<UserPO> getUserByPage(@Param("currentPage") int currentPage, @Param("pageSize") int pageSize);
 }

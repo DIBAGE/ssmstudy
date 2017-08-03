@@ -1,11 +1,16 @@
 package com.linchao.dao;
 
+import com.linchao.po.UserPO;
 import com.linchao.service.UserServiceImp;
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+
+import javax.xml.registry.infomodel.User;
+import java.util.List;
 
 /**
  * @author : linchao
@@ -17,11 +22,11 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 public class UserDaoTest {
     @Autowired
     UserServiceImp userServiceImp;
-    @Autowired
-    UserDao userDao;
+
     @Test
-    public void get(){
-        userServiceImp.get();
-        System.out.println(userDao.selectByPrimaryKey(101));
+    public void get() {
+        List<UserPO> userList = userServiceImp.getUser();
+        Assert.assertEquals("qian", userList.get(0).getUserName());
     }
+
 }

@@ -1,16 +1,14 @@
-<%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ page contentType="text/html; charset=UTF-8"  %>
 <html>
+<meta />
 <body>
 <h2>form</h2>
 <form:form method="post" action="map">
     <table>
         <tr>
-            <td><form:label path="userName">Name</form:label></td>
-            <td><form:input path="userName"></form:input></td>
-        </tr>
-        <tr>
-            <td><form:label path="userId">userId</form:label></td>
-            <td><form:input path="userId"></form:input></td>
+            <td><input name="currentPage" type="number"/>aa</td>
+            <td></td>
         </tr>
         <tr>
             <td colspan="2">

@@ -18,12 +18,19 @@
         where id = #{id,jdbcType=INTEGER}
     </select>
 
+    <select id="getUserByPage" resultMap="BaseResultMap">
+        SELECT *
+        from t_ssm_user
+        limit #{currentPage,jdbcType=INTEGER},#{pageSize,jdbcType=INTEGER}
+    </select>
+
     <insert id="insert" parameterType="com.linchao.po.UserPO" >
         insert into t_ssm_user (id, user_name, user_id
             )
         values (#{id,jdbcType=INTEGER}, #{userName,jdbcType=VARCHAR}, #{userId,jdbcType=INTEGER}
             )
     </insert>
+
 
     <update id="updateByPrimaryKeySelective" parameterType="com.linchao.po.UserPO" >
         update t_ssm_user

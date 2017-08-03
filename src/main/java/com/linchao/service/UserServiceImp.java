@@ -1,10 +1,11 @@
 package com.linchao.service;
 
 import com.linchao.dao.UserDao;
+import com.linchao.po.UserPO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * @author : linchao
@@ -12,12 +13,12 @@ import javax.annotation.Resource;
  * @description :
  */
 @Service("userServiceImp")
-public class UserServiceImp {
+public class UserServiceImp implements UserService {
 
     @Autowired
     UserDao userDao;
 
-    public void get(){
-        System.out.println(userDao.selectByPrimaryKey(101).getUserName());
+    public List<UserPO> getUser(){
+        return userDao.getUserByPage(2,3);
     }
 }
