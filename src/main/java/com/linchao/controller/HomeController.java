@@ -24,7 +24,6 @@ import java.util.List;
 @Controller
 @ResponseBody
 public class HomeController {
-
     @Autowired
     UserServiceImp userService;
 
