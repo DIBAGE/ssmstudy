@@ -10,6 +10,7 @@ public class CommonResponseVo {
     private String rstcode;
     private String rstmsg;
     private Object body;
+    private Object object;
 
     public CommonResponseVo() {
     }
