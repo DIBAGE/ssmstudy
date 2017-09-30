@@ -1,7 +1,7 @@
 package com.linchao.controller;
 
 import com.github.pagehelper.PageInfo;
-import com.linchao.dto.CommonResponseVo;
+import com.linchao.dto.ResultInfo;
 import com.linchao.po.UserPO;
 import com.linchao.service.UserServiceImp;
 import com.linchao.vo.PageUserVo;
@@ -35,15 +35,15 @@ public class HomeController {
 
     @RequestMapping(value = "/map")
     @ResponseBody
-    public CommonResponseVo home(@ModelAttribute("pageUserVo") PageUserVo pageUserVo, BindingResult result, Model model) {
+    public ResultInfo home(@ModelAttribute("pageUserVo") PageUserVo pageUserVo, BindingResult result, Model model) {
 //        model.addAttribute("userId", pageUserVo.getCurrentPage());
         PageInfo<UserPO> pageInfo = new PageInfo<>();
         List<UserPO> userList = userService.getUser();
         pageInfo.setList(userList);
         pageInfo.setPages(pageUserVo.getCurrentPage());
-        CommonResponseVo commonResponseVo = new CommonResponseVo();
-        commonResponseVo.setBody(pageInfo);
-        return commonResponseVo;
+        ResultInfo resultInfo = new ResultInfo();
+        resultInfo.setBody(pageInfo);
+        return resultInfo;
     }
 
 }
