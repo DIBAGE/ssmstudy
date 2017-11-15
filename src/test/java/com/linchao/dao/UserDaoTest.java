@@ -11,6 +11,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import javax.xml.registry.infomodel.User;
 import java.util.List;
+import java.util.regex.Pattern;
 
 /**
  * @author : linchao
@@ -29,4 +30,10 @@ public class UserDaoTest {
         Assert.assertEquals("qian", userList.get(0).getUserName());
     }
 
+    @Test
+    public void grex(){
+        String pattern = "^(([1-9]\\d+),)*([1-9]\\d+)";
+        String str1 = "100,100,200,1000,23";
+        System.out.println(Pattern.matches(pattern, str1));
+    }
 }
